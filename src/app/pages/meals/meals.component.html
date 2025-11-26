@@ -1,0 +1,22 @@
+<h1>Your Meals</h1>
+
+@if (meals.length === 0) {
+  <p>No meals found.</p>
+}
+
+@for (meal of meals; track meal._id) {
+  <mat-card class="meal-card">
+    <mat-card-title>{{ meal.mealType }} - {{ meal.foodName }}</mat-card-title>
+    <mat-card-content>
+      <p>Calories: {{ meal.calories }}</p>
+      <p>Protein: {{ meal.protein }}g</p>
+      <p>Carbs: {{ meal.carbs }}g</p>
+      <p>Fat: {{ meal.fat }}g</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="editMeal(meal)">Edit</button>
+      <button mat-button color="warn" (click)="deleteMeal(meal._id)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+}

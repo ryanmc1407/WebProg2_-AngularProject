@@ -1,0 +1,25 @@
+<h2>Edit Meal</h2>
+
+<form [formGroup]="mealForm" (ngSubmit)="saveMeal()">
+
+  <label>Meal Type</label>
+  <input formControlName="mealType" />
+
+  <label>Food Name</label>
+  <input formControlName="foodName" />
+
+  <label>Calories</label>
+  <input type="number" formControlName="calories" />
+
+  <label>Protein (g)</label>
+  <input type="number" formControlName="protein" />
+
+  <label>Carbs (g)</label>
+  <input type="number" formControlName="carbs" />
+
+  <label>Fat (g)</label>
+  <input type="number" formControlName="fat" />
+
+  <button type="submit">Save</button>
+
+</form>
